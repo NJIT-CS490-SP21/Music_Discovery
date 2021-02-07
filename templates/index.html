@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <link href="static/style.css" rel="stylesheet"/>
     </head>
 
 <body>
-    <div> {{my_song_name}}</div>
-    <div> {{my_song_artist}}</div>
-    {%if my_song_artist is eq("Future")%}
-    <img src ={{future}} />
+    <div> {{song_name}}</div>
+    <div> {{song_artist}}</div>
+    {%if song_artist is eq("Future")%}
+    <img class="banner" src ={{future}} />
     {%endif%}
-    {%if my_song_artist is eq("Offset")%}
-    <img src ={{offset}} />
+    {%if song_artist is eq("Offset")%}
+    <img class="banner" src ={{offset}} />
     {%endif%}
-    {%if my_song_artist is eq("Travis Scott")%}
-    <img src ={{travis}} />
+    {%if song_artist is eq("Travis Scott")%}
+    <img class="banner" src ={{travis}} />
     {%endif%}
-    <div> {{my_preview_url}}</div>
+    <div class="dot"> {{preview_url}}</div>
 </body>
 </html>
 
