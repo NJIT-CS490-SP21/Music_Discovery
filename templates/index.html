@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+
+<body>
+    <div> {{my_song_name}}</div>
+    <div> {{my_song_artist}}</div>
+    {%if my_song_artist is eq("Future")%}
+    <img src ={{future}} />
+    {%endif%}
+    {%if my_song_artist is eq("Offset")%}
+    <img src ={{offset}} />
+    {%endif%}
+    {%if my_song_artist is eq("Travis Scott")%}
+    <img src ={{travis}} />
+    {%endif%}
+    <div> {{my_preview_url}}</div>
+</body>
+</html>
+
