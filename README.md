@@ -20,8 +20,9 @@ then run main.py with the command python main.py followed by python app.py.
 After that click on preview and you should be able to see the webpage.
 
 ## Acknowledgements:
-The main issue with the projetc1, at least with me, was getting the access_token.
-The second issue was how to get your desired information from Spotify.
+1.Getting two or more top song from one artist .
+2.Improve current project to have a playlist of top songs from the artist that user inputs. I would like to implement a List of Current User's Playlists
+or list of Spotify playlists tagged with a particular category.
 
 ##  Detailed description:
 #### Issue with the Keyerror: access_token
