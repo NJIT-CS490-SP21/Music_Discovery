@@ -5,9 +5,8 @@ body {
 
 .banner {
     display: block;
-    -moz-box-sizing: border-box;
-    width: 200px; 
-    height: 250px;
+    width: 250px; 
+    height: 300px;
 }
 
 div {
@@ -22,11 +21,27 @@ img {
 }
 
 img {
-  width: 60%;
+  width: 70%;
   margin: auto;
   display: block;
 }
 
 .dot{
     font-size: 10px;
+}
+
+.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    display: block ;
+    font-family: "Arial";
+    background-color: #4CAF50;
+    color: blue;
+    padding: 20px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 20px;
+
 }
