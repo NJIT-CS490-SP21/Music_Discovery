@@ -3,8 +3,23 @@ import os
 from dotenv import load_dotenv,find_dotenv
 import random
 
+load_dotenv(find_dotenv())
+
+def top_song_lyrics(song_artist,song_name):
+    token=os.getenv("genius-Token")
+    base_url = 'https://api.genius.com'
+    headers = {'Authorization': 'Bearer ' + str(token)}
+    search_url = base_url + '/search'
+    data = {'q': song_artist + ' ' + song_name}
+    response = requests.get(search_url, data=data, headers=headers)
+    data = response.json()
+    song_lyrics_link=data['response']['hits'][0]['result']['url']
+    return {
+        'song_lyrics_link': song_lyrics_link
+    }
+    
 def top_song():
-    load_dotenv(find_dotenv())
+    
     AUTH_URL = 'https://accounts.spotify.com/api/token'
     auth_response = requests.post(AUTH_URL, {
         'grant_type': 'client_credentials',
@@ -18,9 +33,8 @@ def top_song():
     headers = {
         'Authorization': 'Bearer {token}'.format(token=access_token)
     }
-    
-    
-    URL1 = "https://api.spotify.com/v1/artists/1RyvyyTE3xzB2ZywiAwp0i/top-tracks"
+ 
+    URL1= "https://api.spotify.com/v1/artists/0VRj0yCOv2FXJNP47XQnx5/top-tracks"
     URL2 = "https://api.spotify.com/v1/artists/4DdkRBBYG6Yk9Ka8tdJ9BW/top-tracks"
     URL3= "https://api.spotify.com/v1/artists/0Y5tJX1MQlPlqiwlOH1tJY/top-tracks"
     URL = [URL1,URL2,URL3]
@@ -32,14 +46,17 @@ def top_song():
     data = response.json()
 
     song_name=data['tracks'][0]['name']
-
+   
     song_artist=data['tracks'][0]['artists'][0]['name']
-
+  
+    song_img=data['tracks'][0]['album']['images'][0]['url']
+    
     preview_url=data['tracks'][0]['preview_url']
-
+ 
     return{
         'song_name':song_name,
         'song_artist':song_artist,
+        'song_img':song_img,
         'preview_url':preview_url,
     }
 
