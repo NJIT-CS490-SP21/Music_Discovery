@@ -7,17 +7,11 @@
 <body>
     <div> {{song_name}}</div>
     <div> {{song_artist}}</div>
-    {%if song_artist is eq("Future")%}
-    <img class="banner" src ={{future}} />
-    {%endif%}
-    {%if song_artist is eq("Offset")%}
-    <img class="banner" src ={{offset}} />
-    {%endif%}
-    {%if song_artist is eq("Travis Scott")%}
-    <img class="banner" src ={{travis}} />
-    {%endif%}
+    <img class="banner" src ={{song_img}} />
     <div class="dot"><audio controls src={{preview_url}}><audio/></div>
-    <div class="dot"> {{preview_url}}</div>
+    <a href="{{song_lyrics_link}}" class="button">song lyrics link </a>
+    <a href="{{preview_url}}" class="button">preview url</a>
+    <a href="{{song_img}}" class="button"> song's cover</a>
     
 </body>
 </html>
