@@ -1,4 +1,4 @@
-# Project1-Milestone1
+# Project1-Milestone2
 
 ## Introduction
 This README file contains the main toolchain for a simple music discovery web app that shows song(s) from your favorite artist(s) and link(s) to the preview.
@@ -13,10 +13,14 @@ Project1 is created with:
 * pip install requests
 * pip install flask
 * pip install -U python-dotenv
+* npm install -g heroku
 
 ## Launch:
 In order to run the project1 clearly, you need to create a spotify rest API and create a simple app, export your client-id and client-secret in a .env file,
-then run main.py with the command python main.py followed by python app.py.
+Export your client id as "ID" in the .env file and export client secret as "SECRET" in .env.You also need to create a Genius API and a create a client app, have your client id and client secret exported in the .env file. You also need
+to generate a access token which will be on your dashboard, then export it on the .env file. You need to export each of them as "genius-ID", "genius-Secret" and "genius-Token".
+Save all your files.
+Now you can run app.py with the command python app.py
 After that click on preview and you should be able to see the webpage.
 
 ## Acknowledgements:
