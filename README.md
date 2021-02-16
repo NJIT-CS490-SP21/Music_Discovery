@@ -19,9 +19,11 @@ Project1 is created with:
 In order to run the project1 clearly, you need to create a spotify rest API and create a simple app, export your client-id and client-secret in a .env file,
 Export your client id as "ID" in the .env file and export client secret as "SECRET" in .env.You also need to create a Genius API and a create a client app, have your client id and client secret exported in the .env file. You also need
 to generate a access token which will be on your dashboard, then export it on the .env file. You need to export each of them as "genius-ID", "genius-Secret" and "genius-Token".
-Save all your files.
-Now you can run app.py with the command python app.py
+Now you can run app.py with the command python app.py for viewing in the preview.
 After that click on preview and you should be able to see the webpage.
+After installing Heroku on your terminal, create an account in the Heroku. Once you have all your files saved on github type"heroku login -i" and log in to your account in the terminal
+and then type "heroku create"
+and then "git push heroku main". Then you can type "heroku open" and you should be able to see your webpage.
 
 ## Acknowledgements:
 1.Getting two or more top song from one artist .
@@ -46,12 +48,20 @@ https://developer.spotify.com/documentation/web-api/reference/#category-artists
 https://dev.to/arvindmehairjan/how-to-play-spotify-songs-and-show-the-album-art-using-spotipy-library-and-python-5eki
 
 #### Issue on passing info from the main to the app and eventually showing them on the webpage
-Once I finished main.py I had everuthing I needed but I didnt know how to utilize those output in order to run flask and 
+Once I finished main.py I had everything I needed but I didnt know how to utilize those output in order to run flask and 
 connect to the html to show my output on the webpage. For this one I tried to understand the example from our class, where 
 we trying to find the specific article in the New york times api. This example helped me to how to return my variable from 
 main so I can use them in the app and then assign them in html.
 The resource that help me out is:
 https://github.com/NJIT-CS490-SP21/lect5-demo-nyt
 
+#### Issue on Genius API access token
+I had issue connecting to my API, although I generated my access token from my dashboard, but still I couldnt connect to genius.
+My mistake was actually a string type error. In my code, specificly {'Authorization': 'Bearer ' + str(token)}, instead of
+str(token), I had my genius token and code was working fine but then I changed it to os.getenv(genius_token), still didnt work.
+I realized + sign is concatenation in python and we can only concatenate of same type. So I just add str and I made a variable 
+token that is equal to os.getenv(genius_token). These documents helped me alot.
+https://docs.genius.com/#/getting-started-h1
+https://dev.to/willamesoares/how-to-integrate-spotify-and-genius-api-to-easily-crawl-song-lyrics-with-python-4o62
 
 
