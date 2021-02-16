@@ -17,11 +17,11 @@ def hello_world():
         song_artist=song['song_artist'],
         preview_url=song['preview_url'],
         song_img=song['song_img'],
-        song_lyrics_link=lyrics['song_lyrics_link']
+        song_lyrics_link=lyrics['song_lyrics_link'],
         )
 
 app.run(
     host=os.getenv('IP',"0,0,0,0"),
     port=int(os.getenv("PORT",8080)),
-    debug=True
+    debug=True,
     )
