@@ -1,5 +1,5 @@
 from flask import Flask,render_template
-from main import top_song,top_song_lyrics
+from genius import top_song,top_song_lyrics
 import os
 
 app=Flask(__name__)
@@ -12,7 +12,7 @@ def hello_world():
     song_name=song['song_name']
     lyrics=top_song_lyrics(song_artist,song_name)
     return render_template(
-        "index.html",
+        "index.html", 
         song_name=song['song_name'],
         song_artist=song['song_artist'],
         preview_url=song['preview_url'],

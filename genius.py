@@ -19,7 +19,6 @@ def top_song_lyrics(song_artist,song_name):
     }
     
 def top_song():
-    
     AUTH_URL = 'https://accounts.spotify.com/api/token'
     auth_response = requests.post(AUTH_URL, {
         'grant_type': 'client_credentials',
@@ -44,9 +43,9 @@ def top_song():
     
     response = requests.get(random.choice(URL) , headers=headers,params=params) 
     data = response.json()
+  
 
     song_name=data['tracks'][0]['name']
-   
     song_artist=data['tracks'][0]['artists'][0]['name']
   
     song_img=data['tracks'][0]['album']['images'][0]['url']
